@@ -1,10 +1,11 @@
+from models import composant
 from models.session import Session
 
 
-class Cours:
+class Cours(composant.Composant):
     def __init__(self, nom: str):
         self.nom = nom
-        self.sessions: list[Session] = []
+        self.sessions: list[composant.Composant] = []
 
     def ajouter_session(self, session: Session) -> None:
         self.sessions.append(session)
